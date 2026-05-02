@@ -44,8 +44,13 @@ startAuto();
 // ---------- WORKING DOWNLOAD BUTTONS ----------
 // Change this path to the real location of your .exe or .zip file
 const GAME_FILE_PATH = 'game/dist/Echoes Of Valor.exe';
+let isDownloading = false; // Prevent multiple simultaneous downloads
 
 function downloadGame() {
+  // Prevent multiple downloads at once
+  if (isDownloading) return;
+  isDownloading = true;
+
   // Create a temporary anchor and trigger download
   const link = document.createElement('a');
   link.href = GAME_FILE_PATH;
@@ -53,27 +58,21 @@ function downloadGame() {
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
+
+  // Reset flag after a short delay
+  setTimeout(() => {
+    isDownloading = false;
+  }, 1000);
 }
 
-// Attach to both download buttons (hero and main section)
-const heroBtn = document.getElementById('downloadBtnHero');
-const mainBtn = document.getElementById('realDownloadBtn');
+// Consolidate all download button listeners to avoid duplicate triggers
+const downloadButtons = new Set([
+  document.getElementById('downloadBtnHero'),
+  document.getElementById('realDownloadBtn'),
+  ...document.querySelectorAll('.dlbtn')
+].filter(btn => btn !== null));
 
-if (heroBtn) {
-  heroBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    downloadGame();
-  });
-}
-if (mainBtn) {
-  mainBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    downloadGame();
-  });
-}
-
-// Optional: also handle any other element with class 'dlbtn'
-document.querySelectorAll('.dlbtn').forEach(btn => {
+downloadButtons.forEach(btn => {
   btn.addEventListener('click', (e) => {
     e.preventDefault();
     downloadGame();
