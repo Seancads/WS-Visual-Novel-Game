@@ -1,0 +1,563 @@
+{
+  "title": "Echoes of Valor",
+  "screen_width": 1280,
+  "screen_height": 720,
+  "chapters": [
+    {
+      "id": 1,
+      "title": "Leaving Home",
+      "required_prev_stars": 0,
+      "characters": {
+        "mother": {"name": "Aling Rosa", "image": "mother.png"},
+        "friend": {"name": "Marco", "image": "friend.png"},
+        "sergeant": {"name": "Sgt. Ramirez", "image": "sergeant.png"}
+      },
+      "scenarios": [
+        {
+          "background_image": "house_morning.png",
+          "sequence": [
+            {"speaker": "narrator", "text": "The morning feels heavier than usual. The house is quiet—too quiet."},
+            {"speaker": "npc", "npc_id": "mother", "text": "You don’t have to go, anak... we can find another way."},
+            {"speaker": "player", "text": "I do. For us."}
+          ],
+          "choices": [
+            {
+              "text": "Hug your mother tightly",
+              "correct": true,
+              "pre_success_sequence": [
+                {"speaker": "narrator", "text": "You step forward and embrace her tightly."},
+                {"speaker": "npc", "npc_id": "mother", "text": "Come back safe, okay?"}
+              ]
+            },
+            {
+              "text": "Leave without a word",
+              "correct": false,
+              "pre_failure_sequence": [
+                {"speaker": "npc", "npc_id": "mother", "text": "...Anak?"}
+              ],
+              "failure_text": "Her silence follows you outside."
+            },
+            {
+              "text": "Joke to lighten the mood",
+              "correct": false,
+              "pre_failure_sequence": [
+                {"speaker": "player", "text": "I’ll be back before you miss me."}
+              ],
+              "failure_text": "She smiles, but her eyes stay worried."
+            }
+          ]
+        },
+
+        {
+          "background_image": "street.png",
+          "sequence": [
+            {"speaker": "narrator", "text": "Marco waits outside the gate, trying to act normal."},
+            {"speaker": "npc", "npc_id": "friend", "text": "So... this is really happening."},
+            {"speaker": "player", "text": "Yeah."}
+          ],
+          "choices": [
+            {
+              "text": "Promise to come back",
+              "correct": true,
+              "pre_success_sequence": [
+                {"speaker": "player", "text": "I’ll come back. No matter what."},
+                {"speaker": "npc", "npc_id": "friend", "text": "You better."}
+              ]
+            },
+            {
+              "text": "Brush it off casually",
+              "correct": false,
+              "pre_failure_sequence": [
+                {"speaker": "player", "text": "Relax. It’s nothing."}
+              ],
+              "failure_text": "He forces a laugh, but it feels wrong."
+            }
+          ]
+        },
+
+        {
+          "background_image": "bus.png",
+          "sequence": [
+            {"speaker": "narrator", "text": "The bus ride is quiet. No one wants to talk."}
+          ],
+          "choices": [
+            {
+              "text": "Start a conversation",
+              "correct": true,
+              "pre_success_sequence": [
+                {"speaker": "player", "text": "Hey... first time?"}
+              ]
+            },
+            {
+              "text": "Stay silent",
+              "correct": true,
+              "pre_success_sequence": [
+                {"speaker": "narrator", "text": "You sit quietly, lost in thought."}
+              ]
+            },
+            {
+              "text": "Play music loudly",
+              "correct": false,
+              "failure_text": "A recruit tells you to turn it off."
+            }
+          ]
+        },
+
+        {
+          "background_image": "camp_gate.png",
+          "sequence": [
+            {"speaker": "npc", "npc_id": "sergeant", "text": "WELCOME TO HELL, RECRUITS!"}
+          ],
+          "choices": [
+            {
+              "text": "Stand straight",
+              "correct": true,
+              "pre_success_sequence": [
+                {"speaker": "narrator", "text": "You instinctively straighten your posture."}
+              ]
+            },
+            {
+              "text": "Look around nervously",
+              "correct": false,
+              "pre_failure_sequence": [
+                {"speaker": "npc", "npc_id": "sergeant", "text": "Eyes forward!"}
+              ],
+              "failure_text": "You’re immediately called out."
+            }
+          ]
+        },
+
+        {
+          "background_image": "yard.png",
+          "sequence": [
+            {"speaker": "npc", "npc_id": "sergeant", "text": "You belong to me now."}
+          ],
+          "choices": [
+            {
+              "text": "Respond with 'Yes, sir!'",
+              "correct": true,
+              "pre_success_sequence": [
+                {"speaker": "player", "text": "YES, SIR!"}
+              ]
+            },
+            {
+              "text": "Stay quiet",
+              "correct": false,
+              "pre_failure_sequence": [
+                {"speaker": "npc", "npc_id": "sergeant", "text": "Did I not ask you something?"}
+              ],
+              "failure_text": "He notices instantly."
+            }
+          ]
+        },
+
+        {
+          "background_image": "barracks.png",
+          "sequence": [
+            {"speaker": "narrator", "text": "Rows of bunk beds stretch across the room."}
+          ],
+          "choices": [
+            {
+              "text": "Pick a bunk quickly",
+              "correct": true,
+              "pre_success_sequence": [
+                {"speaker": "narrator", "text": "You secure a spot quickly."}
+              ]
+            },
+            {
+              "text": "Wait and observe",
+              "correct": false,
+              "failure_text": "Everything gets taken."
+            }
+          ]
+        },
+
+        {
+          "background_image": "night.png",
+          "sequence": [
+            {"speaker": "player", "text": "Did I make the right choice?"}
+          ],
+          "choices": [
+            {
+              "text": "Write a letter home",
+              "correct": true,
+              "pre_success_sequence": [
+                {"speaker": "narrator", "text": "You start writing, slowly finding the words."}
+              ]
+            },
+            {
+              "text": "Force yourself to sleep",
+              "correct": true,
+              "pre_success_sequence": [
+                {"speaker": "narrator", "text": "You close your eyes and steady your breathing."}
+              ]
+            }
+          ]
+        },
+
+        {
+          "background_image": "alarm.png",
+          "sequence": [
+            {"speaker": "npc", "npc_id": "sergeant", "text": "UP! NOW!"}
+          ],
+          "choices": [
+            {
+              "text": "Jump out immediately",
+              "correct": true,
+              "pre_success_sequence": [
+                {"speaker": "narrator", "text": "You jump out of bed instantly."}
+              ]
+            },
+            {
+              "text": "Groan and move slowly",
+              "correct": false,
+              "pre_failure_sequence": [
+                {"speaker": "player", "text": "...just a second..."}
+              ],
+              "failure_text": "Big mistake."
+            }
+          ]
+        },
+
+        {
+          "background_image": "training_field.png",
+          "sequence": [
+            {"speaker": "narrator", "text": "Training begins before sunrise."}
+          ],
+          "choices": [
+            {
+              "text": "Push through exhaustion",
+              "correct": true,
+              "pre_success_sequence": [
+                {"speaker": "narrator", "text": "You push through the pain and keep going."}
+              ]
+            },
+            {
+              "text": "Hold back energy",
+              "correct": false,
+              "pre_failure_sequence": [
+                {"speaker": "npc", "npc_id": "sergeant", "text": "You slowing down?"}
+              ],
+              "failure_text": "You’re called out for slacking."
+            }
+          ]
+        },
+
+        {
+          "background_image": "closeup.png",
+          "sequence": [
+            {"speaker": "npc", "npc_id": "sergeant", "text": "Why are you here, recruit?"}
+          ],
+          "choices": [
+            {
+              "text": "For my family",
+              "correct": true,
+              "pre_success_sequence": [
+                {"speaker": "player", "text": "For my family, sir."}
+              ]
+            },
+            {
+              "text": "I don’t know",
+              "correct": false,
+              "pre_failure_sequence": [
+                {"speaker": "player", "text": "I don’t know, sir."}
+              ],
+              "failure_text": "He stares in disappointment."
+            },
+            {
+              "text": "To prove myself",
+              "correct": true,
+              "pre_success_sequence": [
+                {"speaker": "player", "text": "To prove myself, sir."}
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Fire and Brotherhood",
+      "required_prev_stars": 0,
+      "characters": {
+        "teammate": {"name": "Luis", "image": "luis.png"},
+        "captain": {"name": "Capt. Reyes", "image": "captain.png"},
+        "sergeant": {"name": "Sgt. Ramirez", "image": "sergeant.png"}
+      },
+      "scenarios": [
+        {
+          "background_image": "range.png",
+          "sequence": [
+            {"speaker": "narrator", "text": "The crack of gunfire fills the air."},
+            {"speaker": "npc", "npc_id": "captain", "text": "Live fire exercise. This is not a drill."}
+          ],
+          "choices": [
+            {
+              "text": "Control your breathing",
+              "correct": true,
+              "pre_success_sequence": [
+                {"speaker": "narrator", "text": "You steady your breathing and aim carefully."}
+              ]
+            },
+            {
+              "text": "Fire rapidly",
+              "correct": false,
+              "pre_failure_sequence": [
+                {"speaker": "narrator", "text": "You panic and squeeze the trigger repeatedly."}
+              ],
+              "failure_text": "Your shots go wild."
+            }
+          ]
+        },
+
+        {
+          "background_image": "range_close.png",
+          "sequence": [
+            {"speaker": "npc", "npc_id": "teammate", "text": "Hey... first time under real pressure?"}
+          ],
+          "choices": [
+            {
+              "text": "Admit it",
+              "correct": true,
+              "pre_success_sequence": [
+                {"speaker": "player", "text": "Yeah. Trying not to mess up."},
+                {"speaker": "npc", "npc_id": "teammate", "text": "Stick with me. We’ll get through it."}
+              ]
+            },
+            {
+              "text": "Act confident",
+              "correct": false,
+              "pre_failure_sequence": [
+                {"speaker": "player", "text": "I’ve got this."}
+              ],
+              "failure_text": "He raises an eyebrow, unconvinced."
+            }
+          ]
+        },
+
+        {
+          "background_image": "obstacle_fire.png",
+          "sequence": [
+            {"speaker": "narrator", "text": "Gunfire continues as you move between cover."}
+          ],
+          "choices": [
+            {
+              "text": "Move cover to cover",
+              "correct": true,
+              "pre_success_sequence": [
+                {"speaker": "narrator", "text": "You dash between barriers, staying low."}
+              ]
+            },
+            {
+              "text": "Run in the open",
+              "correct": false,
+              "pre_failure_sequence": [
+                {"speaker": "narrator", "text": "You sprint without thinking."}
+              ],
+              "failure_text": "You’re exposed immediately."
+            }
+          ]
+        },
+
+        {
+          "background_image": "mud_training.png",
+          "sequence": [
+            {"speaker": "npc", "npc_id": "sergeant", "text": "Get down! Crawl!"}
+          ],
+          "choices": [
+            {
+              "text": "Low crawl properly",
+              "correct": true,
+              "pre_success_sequence": [
+                {"speaker": "narrator", "text": "You press yourself into the mud and crawl forward."}
+              ]
+            },
+            {
+              "text": "Rush forward",
+              "correct": false,
+              "pre_failure_sequence": [
+                {"speaker": "narrator", "text": "You try to move faster by lifting up."}
+              ],
+              "failure_text": "You almost get hit."
+            }
+          ]
+        },
+
+        {
+          "background_image": "field_command.png",
+          "sequence": [
+            {"speaker": "npc", "npc_id": "captain", "text": "Team, advance!"}
+          ],
+          "choices": [
+            {
+              "text": "Move with the squad",
+              "correct": true,
+              "pre_success_sequence": [
+                {"speaker": "narrator", "text": "You stay in formation."}
+              ]
+            },
+            {
+              "text": "Move ahead alone",
+              "correct": false,
+              "pre_failure_sequence": [
+                {"speaker": "narrator", "text": "You push forward on your own."}
+              ],
+              "failure_text": "You break formation."
+            }
+          ]
+        },
+
+        {
+          "background_image": "explosion.png",
+          "sequence": [
+            {"speaker": "narrator", "text": "A loud explosion shakes the ground."},
+            {"speaker": "npc", "npc_id": "teammate", "text": "What was that?!"}
+          ],
+          "choices": [
+            {
+              "text": "Stay focused",
+              "correct": true,
+              "pre_success_sequence": [
+                {"speaker": "player", "text": "Keep moving!"}
+              ]
+            },
+            {
+              "text": "Freeze in fear",
+              "correct": false,
+              "pre_failure_sequence": [
+                {"speaker": "narrator", "text": "You hesitate, stunned."}
+              ],
+              "failure_text": "You lose momentum."
+            }
+          ]
+        },
+
+        {
+          "background_image": "field.png",
+          "sequence": [
+            {"speaker": "npc", "npc_id": "teammate", "text": "I’m hit! I can’t move!"}
+          ],
+          "choices": [
+            {
+              "text": "Drag him to cover",
+              "correct": true,
+              "pre_success_sequence": [
+                {"speaker": "narrator", "text": "You grab him and pull him behind cover."},
+                {"speaker": "npc", "npc_id": "teammate", "text": "I owe you one..."}
+              ]
+            },
+            {
+              "text": "Call for help",
+              "correct": true,
+              "pre_success_sequence": [
+                {"speaker": "player", "text": "Medic! We need help!"}
+              ]
+            },
+            {
+              "text": "Keep moving forward",
+              "correct": false,
+              "pre_failure_sequence": [
+                {"speaker": "narrator", "text": "You hesitate, then move on."}
+              ],
+              "failure_text": "You leave him behind."
+            }
+          ]
+        },
+
+        {
+          "background_image": "cover.png",
+          "sequence": [
+            {"speaker": "npc", "npc_id": "captain", "text": "Hold this position!"}
+          ],
+          "choices": [
+            {
+              "text": "Hold your ground",
+              "correct": true,
+              "pre_success_sequence": [
+                {"speaker": "narrator", "text": "You steady your weapon and stay ready."}
+              ]
+            },
+            {
+              "text": "Retreat early",
+              "correct": false,
+              "pre_failure_sequence": [
+                {"speaker": "narrator", "text": "You fall back too soon."}
+              ],
+              "failure_text": "You abandon your post."
+            }
+          ]
+        },
+
+        {
+          "background_image": "after_action.png",
+          "sequence": [
+            {"speaker": "narrator", "text": "The exercise slows. The noise fades."}
+          ],
+          "choices": [
+            {
+              "text": "Check on Luis",
+              "correct": true,
+              "pre_success_sequence": [
+                {"speaker": "player", "text": "You okay?"},
+                {"speaker": "npc", "npc_id": "teammate", "text": "Yeah... thanks to you."}
+              ]
+            },
+            {
+              "text": "Ignore and rest",
+              "correct": false,
+              "pre_failure_sequence": [
+                {"speaker": "narrator", "text": "You sit down, exhausted."}
+              ],
+              "failure_text": "You avoid him."
+            }
+          ]
+        },
+
+        {
+          "background_image": "sunset_field.png",
+          "sequence": [
+            {"speaker": "npc", "npc_id": "teammate", "text": "You didn’t have to help me back there."},
+            {"speaker": "player", "text": "..."}
+          ],
+          "choices": [
+            {
+              "text": "“We’re a team.”",
+              "correct": true,
+              "pre_success_sequence": [
+                {"speaker": "npc", "npc_id": "teammate", "text": "...Yeah. We are."}
+              ]
+            },
+            {
+              "text": "“Just doing my job.”",
+              "correct": false,
+              "pre_failure_sequence": [
+                {"speaker": "npc", "npc_id": "teammate", "text": "Right... just a job."}
+              ],
+              "failure_text": "Something feels distant."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "COMING SOON",
+      "required_prev_stars": 999
+    },
+    {
+      "id": 4,
+      "title": "COMING SOON",
+      "required_prev_stars": 999
+    },
+    {
+      "id": 5,
+      "title": "COMING SOON",
+      "required_prev_stars": 999
+    },
+    {
+      "id": 6,
+      "title": "COMING SOON",
+      "required_prev_stars": 999
+    }
+  ]
+}
