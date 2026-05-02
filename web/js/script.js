@@ -43,7 +43,7 @@ startAuto();
 
 // ---------- WORKING DOWNLOAD BUTTONS ----------
 // Change this path to the real location of your .exe or .zip file
-const GAME_FILE_PATH = 'game/dist/Echoes Of Valor.exe';
+const GAME_FILE_PATH = 'game/dist/Echoes%20Of%20Valor.exe';
 let isDownloading = false; // Prevent multiple simultaneous downloads
 
 function downloadGame() {
@@ -55,6 +55,7 @@ function downloadGame() {
   const link = document.createElement('a');
   link.href = GAME_FILE_PATH;
   link.download = 'Echoes Of Valor.exe';
+  link.setAttribute('type', 'application/octet-stream');
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);

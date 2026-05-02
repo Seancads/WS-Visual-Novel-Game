@@ -297,56 +297,6 @@
 
 <script src="web/js/script.js"></script>
 
-<!-- ADDITIONAL SCRIPT TO MAKE DOWNLOAD WORK -->
-<script>
-(function() {
-  function triggerDownload(filename, content, mimeType = 'application/octet-stream') {
-    const blob = new Blob([content], { type: mimeType });
-    const link = document.createElement('a');
-    const url = URL.createObjectURL(blob);
-    link.href = url;
-    link.download = filename;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    URL.revokeObjectURL(url);
-  }
 
-  // Placeholder content – replace this with your actual game binary or zip data
-  const placeholderMessage = 
-    "This is a placeholder file for Echoes of Valor.\n\n" +
-    "To make this download work with your real game:\n" +
-    "1. Replace the content of this file with your actual game executable (or zip).\n" +
-    "2. Or change the 'triggerDownload' call below to point to your real file URL.\n\n" +
-    "For developers: if your game is at 'game/dist/Echoes Of Valor.exe', you can use:\n" +
-    "   window.location.href = 'game/dist/Echoes%20Of%20Valor.exe';\n" +
-    "or use a direct anchor with download attribute.\n\n" +
-    "Thank you for playing Echoes of Valor!";
-
-  function downloadGame() {
-    triggerDownload('Echoes Of Valor.exe', placeholderMessage);
-    
-    // Optional: show a small note that this is a placeholder demo
-    console.log("Download triggered – replace placeholder with real game file.");
-  }
-
-  const downloadBtn = document.getElementById('realDownloadBtn');
-  if (downloadBtn) {
-    downloadBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      downloadGame();
-    });
-  }
-
-  // Also fix the "Download Now" button in hero section
-  const heroBtn = document.getElementById('downloadBtnHero');
-  if (heroBtn) {
-    heroBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      downloadGame();
-    });
-  }
-})();
-</script>
 </body>
 </html>
